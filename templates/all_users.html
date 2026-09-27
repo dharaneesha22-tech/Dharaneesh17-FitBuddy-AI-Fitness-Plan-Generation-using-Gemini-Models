@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>FitBuddy - Admin Dashboard</title>
+
+<link
+    rel="stylesheet"
+    href="/static/style.css"
+>
+```
+
+</head>
+
+<body>
+
+<div class="page">
+
+```
+<div class="admin-container">
+
+    <a
+        href="/"
+        class="back"
+    >
+        ← Back to FitBuddy
+    </a>
+
+
+    <div class="result-header">
+
+        <div class="badge">
+            🔐 ADMIN DASHBOARD
+        </div>
+
+        <h1>
+            FitBuddy Users
+        </h1>
+
+        <p class="subtitle">
+            Registered users and generated fitness plans
+        </p>
+
+    </div>
+
+
+    {% if records %}
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        User ID
+                    </th>
+
+                    <th>
+                        Name
+                    </th>
+
+                    <th>
+                        Age
+                    </th>
+
+                    <th>
+                        Weight
+                    </th>
+
+                    <th>
+                        Goal
+                    </th>
+
+                    <th>
+                        Intensity
+                    </th>
+
+                    <th>
+                        Original Plan
+                    </th>
+
+                    <th>
+                        Updated Plan
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+            {% for record in records %}
+
+                <tr>
+
+                    <td>
+                        {{ record.user.user_id }}
+                    </td>
+
+                    <td>
+                        {{ record.user.name }}
+                    </td>
+
+                    <td>
+                        {{ record.user.age }}
+                    </td>
+
+                    <td>
+                        {{ record.user.weight }} kg
+                    </td>
+
+                    <td>
+                        {{ record.user.goal }}
+                    </td>
+
+                    <td>
+                        {{ record.user.intensity }}
+                    </td>
+
+                    <td>
+
+                        {% if record.plan %}
+
+                            <details>
+
+                                <summary>
+                                    View Original Plan
+                                </summary>
+
+                                <pre>{{ record.plan.original_plan }}</pre>
+
+                            </details>
+
+                        {% else %}
+
+                            No plan
+
+                        {% endif %}
+
+                    </td>
+
+
+                    <td>
+
+                        {% if record.plan and record.plan.updated_plan %}
+
+                            <details>
+
+                                <summary>
+                                    View Updated Plan
+                                </summary>
+
+                                <pre>{{ record.plan.updated_plan }}</pre>
+
+                            </details>
+
+                        {% else %}
+
+                            No update
+
+                        {% endif %}
+
+                    </td>
+
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    {% else %}
+
+    <div class="empty">
+
+        <h2>
+            No users yet
+        </h2>
+
+        <p>
+            Users will appear here after generating a fitness plan.
+        </p>
+
+    </div>
+
+    {% endif %}
+
+
+    <br>
+
+    <a
+        href="/"
+        class="back"
+    >
+        ← Back to FitBuddy
+    </a>
+
+</div>
+```
+
+</div>
+
+</body>
+
+</html>

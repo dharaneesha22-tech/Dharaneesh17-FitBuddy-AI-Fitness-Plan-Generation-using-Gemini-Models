@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>FitBuddy - Your Fitness Plan</title>
+
+<link
+    rel="stylesheet"
+    href="/static/style.css"
+>
+```
+
+</head>
+
+<body>
+
+<div class="page">
+
+```
+<div class="result-container">
+
+    <a
+        href="/"
+        class="back"
+    >
+        ← Create Another Plan
+    </a>
+
+
+    <div class="result-header">
+
+        <div class="badge">
+            ✨ AI GENERATED FITNESS PLAN
+        </div>
+
+        <h1>
+            Your FitBuddy Plan
+        </h1>
+
+        <p class="subtitle">
+            Personalized using your fitness information and AI.
+        </p>
+
+    </div>
+
+
+    {% if message %}
+
+    <div class="success">
+        {{ message }}
+    </div>
+
+    {% endif %}
+
+
+    <!-- USER PROFILE -->
+
+    <div class="profile-grid">
+
+        <div class="profile-box">
+
+            <span>
+                NAME
+            </span>
+
+            <strong>
+                {{ user.name }}
+            </strong>
+
+        </div>
+
+
+        <div class="profile-box">
+
+            <span>
+                AGE
+            </span>
+
+            <strong>
+                {{ user.age }}
+            </strong>
+
+        </div>
+
+
+        <div class="profile-box">
+
+            <span>
+                WEIGHT
+            </span>
+
+            <strong>
+                {{ user.weight }} kg
+            </strong>
+
+        </div>
+
+
+        <div class="profile-box">
+
+            <span>
+                GOAL
+            </span>
+
+            <strong>
+                {{ user.goal }}
+            </strong>
+
+        </div>
+
+
+        <div class="profile-box">
+
+            <span>
+                INTENSITY
+            </span>
+
+            <strong>
+                {{ user.intensity }}
+            </strong>
+
+        </div>
+
+
+        <div class="profile-box">
+
+            <span>
+                EXPERIENCE
+            </span>
+
+            <strong>
+                {{ user.experience }}
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- WORKOUT PLAN -->
+
+    <div class="result-card">
+
+        <div class="section-title">
+
+            <div class="icon">
+                🏋️
+            </div>
+
+            <div>
+
+                <h2>
+                    Your Workout Plan
+                </h2>
+
+                <p>
+                    AI-generated workout routine
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="plan">
+```
+
+{{ workout_plan }}
+
+```
+        </div>
+
+    </div>
+
+
+    <!-- NUTRITION -->
+
+    <div class="result-card">
+
+        <div class="section-title">
+
+            <div class="icon">
+                🥗
+            </div>
+
+            <div>
+
+                <h2>
+                    Nutrition Tip
+                </h2>
+
+                <p>
+                    Personalized nutrition guidance
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="tip">
+```
+
+{{ nutrition_tip }}
+
+```
+        </div>
+
+    </div>
+
+
+    <!-- UPDATED PLAN -->
+
+    {% if updated_plan %}
+
+    <div class="result-card updated">
+
+        <div class="section-title">
+
+            <div class="icon">
+                🔄
+            </div>
+
+            <div>
+
+                <h2>
+                    Updated Workout Plan
+                </h2>
+
+                <p>
+                    Your plan has been improved based on your feedback.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="plan">
+```
+
+{{ updated_plan }}
+
+```
+        </div>
+
+    </div>
+
+    {% endif %}
+
+
+    <!-- FEEDBACK -->
+
+    <div class="result-card">
+
+        <div class="section-title">
+
+            <div class="icon">
+                💬
+            </div>
+
+            <div>
+
+                <h2>
+                    Improve Your Plan
+                </h2>
+
+                <p>
+                    Tell FitBuddy what you want to change.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form
+            action="/submit-feedback"
+            method="post"
+        >
+
+            <input
+                type="hidden"
+                name="user_id"
+                value="{{ user.user_id }}"
+            >
+
+
+            <textarea
+                name="feedback"
+                placeholder="Example: Make the workout easier, add more cardio, reduce leg exercises..."
+                required
+            ></textarea>
+
+
+            <button
+                type="submit"
+                class="primary-btn"
+            >
+                🔄 Update My Plan
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- DISCLAIMER -->
+
+    <div class="disclaimer">
+
+        <strong>
+            ⚠️ Important:
+        </strong>
+
+        FitBuddy provides AI-generated fitness suggestions
+        for general informational purposes. Always consider
+        your personal health, fitness level and limitations.
+        Consult a qualified fitness or healthcare professional
+        when appropriate.
+
+    </div>
+
+    <br>
+
+    <a
+        href="/"
+        class="back"
+    >
+        ← Back to FitBuddy
+    </a>
+
+</div>
+```
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FitBuddy - AI Fitness Planner</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="hero">
+
+        <div class="badge">
+            🤖 AI FITNESS ASSISTANT
+        </div>
+
+        <h1>
+            Fit<span>Buddy</span>
+        </h1>
+
+        <p class="subtitle">
+            Your personalized AI fitness companion
+        </p>
+
+
+        <div class="card">
+
+            <h2>
+                Create Your Fitness Plan
+            </h2>
+
+            <p class="description">
+                Enter your details and let AI create
+                a personalized 7-day workout plan.
+            </p>
+
+
+            <form
+                action="/generate-workout"
+                method="post"
+            >
+
+                <div class="grid">
+
+
+                    <div class="field">
+
+                        <label>
+                            User ID
+                        </label>
+
+                        <input
+                            type="text"
+                            name="user_id"
+                            placeholder="Example: FB001"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Age
+                        </label>
+
+                        <input
+                            type="number"
+                            name="age"
+                            min="13"
+                            max="100"
+                            placeholder="Age"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Weight (kg)
+                        </label>
+
+                        <input
+                            type="number"
+                            name="weight"
+                            min="20"
+                            max="300"
+                            step="0.1"
+                            placeholder="Weight"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Fitness Goal
+                        </label>
+
+                        <select
+                            name="goal"
+                            required
+                        >
+
+                            <option value="">
+                                Select goal
+                            </option>
+
+                            <option value="Weight Loss">
+                                Weight Loss
+                            </option>
+
+                            <option value="Muscle Gain">
+                                Muscle Gain
+                            </option>
+
+                            <option value="General Wellness">
+                                General Wellness
+                            </option>
+
+                            <option value="Flexibility">
+                                Flexibility
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Workout Intensity
+                        </label>
+
+                        <select
+                            name="intensity"
+                            required
+                        >
+
+                            <option value="">
+                                Select intensity
+                            </option>
+
+                            <option value="Low">
+                                Low
+                            </option>
+
+                            <option value="Medium">
+                                Medium
+                            </option>
+
+                            <option value="High">
+                                High
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label>
+                            Experience Level
+                        </label>
+
+                        <select
+                            name="experience"
+                        >
+
+                            <option value="Beginner">
+                                Beginner
+                            </option>
+
+                            <option value="Intermediate">
+                                Intermediate
+                            </option>
+
+                            <option value="Advanced">
+                                Advanced
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+
+                    ✨ Generate My 7-Day Plan
+
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <div class="features">
+
+
+            <div>
+
+                🧠
+
+                <strong>
+                    AI Powered
+                </strong>
+
+                <small>
+                    Gemini AI
+                </small>
+
+            </div>
+
+
+            <div>
+
+                🏋️
+
+                <strong>
+                    7-Day Plan
+                </strong>
+
+                <small>
+                    Personalized
+                </small>
+
+            </div>
+
+
+            <div>
+
+                🥗
+
+                <strong>
+                    Nutrition
+                </strong>
+
+                <small>
+                    Goal Based
+                </small>
+
+            </div>
+
+
+            <div>
+
+                🔄
+
+                <strong>
+                    Adaptive
+                </strong>
+
+                <small>
+                    Feedback Updates
+                </small>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
